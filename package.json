@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "clean-css": "^5.3.2",
     "ejs": "^3.1.9",
+    "html-minifier": "^4.0.0",
     "showdown": "^2.1.0"
   },
   "devDependencies": {
