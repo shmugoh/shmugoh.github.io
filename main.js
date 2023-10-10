@@ -21,11 +21,6 @@ async function readDir(src = './markdown') {
     });
 }
 
-// File Name RegEx
-function processFileName(filename = 'index.md') {
-    return String(filename).match(/([^\\]*)\.(\w+)$/);
-}
-
 // Iterates thru each file in /markdown/ and saves it as HTML Raw Nav String
 // with its corresponding title (obtained from Header) & filename
 async function processNavBar(src = './markdown') {
@@ -46,7 +41,7 @@ async function processNavBar(src = './markdown') {
 
                 readable.close();
 
-                let fileRegEx = processFileName(file);
+                let fileRegEx = String(file).match(/([^\\]*)\.(\w+)$/);
                 let fileName = fileRegEx[1];
 
                 buff += `<a href="./${fileName}.html"> ${
@@ -59,18 +54,31 @@ async function processNavBar(src = './markdown') {
 }
 
 // Creates Production Environment. Usually done before parsing Markdown
-async function creadProdEnv() {
-    fs.mkdir('prod');
+async function createProdEnv() {
+    fs.mkdir('./prod', (err) => {
+        if (err) {
+            return console.error(err);
+        }
+    });
     let staticFiles = await readDir('./static');
-    let cssFiles = await readDir('./static');
+    let cssFiles = await readDir('./css');
 
     staticFiles.forEach((file) => {
         if (file != String(file).match('.*.ejs$'))
-            fs.copyFile(`./static/${file}`, `./prod/${file}`);
+            fs.copyFile(`./static/${file}`, `./prod/${file}`, (err) => {
+                if (err) {
+                    return console.error();
+                }
+            });
     });
     cssFiles.forEach((file) => {
-        if (file == String(file).match('.*.css$'))
-            fs.copyFile(`./css/${file}`, `./prod/${file}`);
+        if (file == String(file).match('.*.css$')) {
+            fs.copyFile(`./css/${file}`, `./prod/${file}`, (err) => {
+                if (err) {
+                    return console.error();
+                }
+            });
+        }
     });
 
     return 1;
@@ -78,7 +86,7 @@ async function creadProdEnv() {
 
 // Parses Markdown to HTML
 function parseMarkdown(src = './markdown/index.md', mode = 'template', navbar) {
-    let fileRegEx = processFileName(src);
+    let fileRegEx = src.match(/\/.*\/([^\\]*)\.(\w+)$/);
     let fileName = fileRegEx[1];
     let fileFormat = fileRegEx[2];
     if (fileFormat != 'md') {
@@ -100,7 +108,7 @@ function parseMarkdown(src = './markdown/index.md', mode = 'template', navbar) {
             `./static/${mode}.ejs`,
             { navbar: navbar, markdownContent: markdownContent },
             (err, str) => {
-                fs.writeFile('./prod/index.html', str, (err) => {
+                fs.writeFile(`./prod/${fileName}.html`, str, (err) => {
                     if (err) {
                         console.error(err);
                     }
@@ -110,10 +118,12 @@ function parseMarkdown(src = './markdown/index.md', mode = 'template', navbar) {
     });
 }
 
-let x;
-
 (async () => {
-    x = await processNavBar();
-    console.log(x);
-    await parseMarkdown('./markdown/index.md', 'template', x);
+    await createProdEnv();
+    let files = await readDir('./markdown');
+    let navbar = await processNavBar();
+
+    files.forEach(async (file) => {
+        await parseMarkdown(`./markdown/${file}`, 'template', navbar);
+    });
 })();
