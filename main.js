@@ -34,15 +34,16 @@ async function processNavBar(src = './markdown') {
     return new Promise(async (resolve) => {
         setTimeout(async function () {
             for (const file of markdownFiles) {
+                if (file != file.match(/.*.md$/)) {
+                    continue;
+                }
                 const readable = fs.createReadStream(`${src}/${file}`);
                 const reader = readline.createInterface({ input: readable });
-
                 let line;
                 for await (const fileLine of reader) {
                     line = fileLine;
                     break;
                 }
-
                 readable.close();
 
                 let fileRegEx = String(file).match(/([^\\]*)\.(\w+)$/);
