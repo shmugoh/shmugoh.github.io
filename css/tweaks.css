@@ -13,15 +13,11 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
-    background-color: rgba(
-        33,
-        33,
-        33,
-        0.8
-    ); /* Adjust the color and opacity as needed */
-    backdrop-filter: blur(8px); /* Apply the blur effect to the overlay */
-    z-index: -1; /* Ensure the overlay is below other content */
+    background-color: rgba(33, 33, 33, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: -1;
 }
 
 #flag {
@@ -31,8 +27,7 @@ body::before {
 }
 
 div {
-    height: 100vh;
     background-color: transparent;
-    position: relative; /* Add this line to establish a stacking context */
-    z-index: 0; /* Ensure the div is above the body's content */
+    position: relative;
+    z-index: 0;
 }
