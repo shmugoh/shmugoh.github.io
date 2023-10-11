@@ -45,15 +45,20 @@ jobs:
         # Once 'create-new-site' is available on NPM,
         # the only command that will run is `npx create-new-site`.
 
-      - name: Move /prod/ to root
+      - name: Prepare Prod Folder
         run: |
-          mv ./prod/* ./
+          mv prod prod_bak
 
       - name: Checkout to Main Branch
         uses: actions/checkout@v3
         with:
           ref: main
           clean: false
+
+      - name: Copy to Root
+        run: |
+          cp prod_bak/* .
+          rm -r prod_bak
 
       - name: Push Changes
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -70,6 +75,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          ref: main
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload Artifact
