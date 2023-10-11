@@ -13,11 +13,11 @@ consuming, I prefer to keep it on the down-low. I like to call it my
 'secret snack stash.' But beware, that once I get obsessed with
 something, there's no turning back.
 
-This website is pure HTML & CSS. No JavaScript is involved
-(check out the network logs! 258 kB as of writing this).
+This website is pure HTML & CSS; zero JavaScript
+(check out the network logs! 350 kB as of writing this).
 As writing raw HTML can be tedious, this website was written
-with Markdown, using _create-new-site_ (soon), and fully
-translated to a static website.
+with Markdown, using _create-new-site_ (soon), fully
+translating it to a static website.
 
 | Username                                 | Platform     |
 | ---------------------------------------- | ------------ |
