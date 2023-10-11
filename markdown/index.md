@@ -17,7 +17,7 @@ This website is pure HTML & CSS; zero JavaScript
 (check out the network logs! 350 kB as of writing this).
 As writing raw HTML can be tedious, this website was written
 with Markdown, using _create-new-site_ (soon), fully
-translating it to a static website.
+translating it into a static website.
 
 | Username                                 | Platform     |
 | ---------------------------------------- | ------------ |
