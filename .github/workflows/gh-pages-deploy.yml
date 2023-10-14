@@ -70,7 +70,7 @@ jobs:
 
       - name: Copy to Root
         run: |
-          cp prod_bak/* .
+          cp -r prod_bak/* .
           rm -r prod_bak
 
       - name: Push Changes
