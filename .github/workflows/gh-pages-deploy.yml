@@ -4,11 +4,10 @@ on:
   push:
     branches:
       - "ci"
-    paths:
-      - "**.md"
-      - "**.css"
-      - "**.ejs"
-  # workflow_dispatch:
+    # paths:
+    #   - "**.md"
+    #   - "**.css"
+    #   - "**.ejs"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -43,9 +42,13 @@ jobs:
       - name: Move Root to /dev/
         run: |
           mkdir ./dev/
-          cp css -r ./dev/
-          cp static -r ./dev/
-          cp markdown -r ./dev/
+          mkdir ./dev/css
+          mkdir ./dev/static
+          mkdir ./dev/markdown
+
+          cp css/* ./dev/css
+          cp static/* ./dev/static
+          cp markdown/* -r ./dev/markdown
           cp config.yaml -r ./dev/
 
       - name: Compile Markdown to HTML
