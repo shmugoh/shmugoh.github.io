@@ -12,7 +12,7 @@ embed:
   title: shmugo # i should make this vary per page... maybe sometime soon
   description: hello i am shmugo
   url: https://shmugo.co/
-  image: "https://shmugo.co/static/dsfsdf.png"
+  image: "https://shmugo.co/static/hard_work.jpg"
   enhance_image: true
   color: "#191C30"
 
