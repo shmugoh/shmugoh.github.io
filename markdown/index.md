@@ -24,6 +24,9 @@ Check out my projects [here](https://shmugo.co/projects.html).
 
 ### Contact Info
 
+If you need to get in touch with me for whatever reason, find my
+contact details below
+
 | Username                                 | Platform     |
 | ---------------------------------------- | ------------ |
 | [@shmugo\_](https://twitter.com/shmugo_) | Twitter      |
