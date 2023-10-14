@@ -1,91 +1,100 @@
 name: markdown to html - build and deployment
 
 on:
-    push:
-        branches:
-            - 'ci'
-        paths:
-            - '**.md'
-            - '**.css'
-            - '**.ejs'
-    # workflow_dispatch:
+  push:
+    branches:
+      - "ci"
+    paths:
+      - "**.md"
+      - "**.css"
+      - "**.ejs"
+  # workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-    contents: write
-    pages: write
-    id-token: write
+  contents: write
+  pages: write
+  id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-    group: 'pages'
-    cancel-in-progress: false
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-    build:
-        name: Compile Markdown to HTML
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout to ci Branch
-              uses: actions/checkout@v3
-              with:
-                  ref: ci
+  build:
+    name: Compile Markdown to HTML
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to ci Branch
+        uses: actions/checkout@v3
+        with:
+          ref: ci
 
-            - name: Configure NodeJS
-              uses: actions/setup-node@v2
-              with:
-                  node-version: 18
+      - name: Configure NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
 
-            - name: Install Dependencies
-              run: npm i
+      - name: Install create-new-site
+        run: npm i -g create-new-site
 
-            - name: Run Script
-              run: node main.js # temp command for now
-              # The last two arguments are currently placeholders.
-              # Once 'create-new-site' is available on NPM,
-              # the only command that will run is `npx create-new-site`.
+      - name: Move Root to /dev/
+        run: |
+          mkdir ./dev/
+          cp css -r ./dev/
+          cp static -r ./dev/
+          cp markdown -r ./dev/
+          cp config.yaml -r ./dev/
 
-            - name: Prepare Prod Folder
-              run: |
-                  mv prod prod_bak
+      - name: Compile Markdown to HTML
+        run: create-new-site
 
-            - name: Checkout to Main Branch
-              uses: actions/checkout@v3
-              with:
-                  ref: main
-                  clean: false
+      - name: Prepare Prod Folder
+        run: |
+          mv prod prod_bak
 
-            - name: Copy to Root
-              run: |
-                  cp prod_bak/* .
-                  rm -r prod_bak
+      - name: Checkout to Main Branch
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          clean: false
 
-            - name: Push Changes
-              uses: stefanzweifel/git-auto-commit-action@v4
-              with:
-                  commit_message: 'GH Pages Deployment'
+      - name: Remove Root Content # walking ticking time bomb right here, beware
+        run: |
+          find . -type f \( ! -path "./prod_bak/*" ! -path "./.git/*" ! -path "./.gitignore" ! -path "./.github/*" \) -delete
 
-    deploy:
-        name: Deploy Static HTML to Pages
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-              with:
-                  ref: main
+      - name: Copy to Root
+        run: |
+          cp prod_bak/* .
+          rm -r prod_bak
 
-            - name: Setup Pages
-              uses: actions/configure-pages@v3
-            - name: Upload Artifact
-              uses: actions/upload-pages-artifact@v2
-              with:
-                  # Upload entire repository
-                  path: '.'
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v2
+      - name: Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "GH Pages Deployment"
+
+  deploy:
+    name: Deploy Static HTML to Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload entire repository
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

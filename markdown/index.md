@@ -16,11 +16,16 @@ something, there's no turning back.
 This website is pure HTML & CSS; zero JavaScript
 (check out the network logs! 350 kB as of writing this).
 As writing raw HTML can be tedious, this website was written
-with Markdown, using _create-new-site_ (soon), fully
-translating it into a static website.
+with Markdown, using _create-new-site_, fully
+translated to a static website. _create-new-site_ will also power
+this site's blog soon...
+
+Check out my projects [here](https://shmugo.co/projects.html).
+
+### Contact Info
 
 | Username                                 | Platform     |
 | ---------------------------------------- | ------------ |
 | [@shmugo\_](https://twitter.com/shmugo_) | Twitter      |
 | shmugo                                   | Discord      |
-| [juan@shmugo.co](mailto:juan@shmugo.co)  | Public Email |
+| <juan@shmugo.co>                         | Public Email |
