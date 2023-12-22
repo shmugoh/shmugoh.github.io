@@ -1,30 +1,40 @@
 ---
 author: June U.
-pubDatetime: 2023-12-22T15:22:00Z
-title: "Teenage Coding Shenanigans: From Tweeting GTX 770s to Discord Cons"
+pubDatetime: 2023-12-22T23:50:49
+title: "Teenage Coding Shenanigans: From Tweeting GTX 770s to Scrapping Google's Floor"
 postSlug: teenage-coding-shenanigans
 featured: true
 draft: false
 description:
-  Some rules & recommendations for creating or adding new posts using AstroPaper
-  theme.
+  My previous quirky coding projects from teenage years, ranging from a fun barebones twitter client for unusual devices, to a street view scraper and a
+  (now-defunct) funny-remote-managing discord bot.
 ---
 
 wheeew! first post written in astro... honestly i can't believe i wasted a huge amount of time on developing a useless barebones static generator tool (create-new-site), when i could've used astro instead! i mean it would look good on my portfolio nonetheless, but the exhaustion and procrastination was so high i couldn't move on forward with it.
 
-nonetheless... hello! i am june, and welcome to my blog. for no reason other than pure documentation of my old shenanigans, here are my former _featured_ funny programming projects i made during my teenagehood
+nonetheless... hello! i am june, and welcome to my blog. for no reason other than pure documentation of my old shenanigans, here are my former _featured_ funny programming projects i made during my teenagehood. i didn't make that many as i was on a forced mindset on making original unique programs/scripts, so my old shenanigans are basically featured ones too
 
 ---
 
 ### [TweetFromX](https://github.com/shmugoh/TweetFromX): Twitter for Smart Raggedy Shoes
 
-![TweetFromX](@assets/images/TweetFromX.png)
+![TweetFromX](@assets/images/teenage_projects/TweetFromX.png)
+
+  <blockquote class="max-w-md mx-auto">
+  a screenshot of what TweetFromX used to look like
+  </blockquote>
 
 ever seen tweets from bizarre devices like _Twitter for Gucci Smart Fridge_? yeah.. one of my buddies did the same with a GTX 770, and later on complained personally towards me the setup hassle huge setup hazzle you had to do. enter [TweetFromX](https://github.com/shmugoh/tweetfromx), a project that started as a funny experiment with the Twitter API, and also my first attempt at coding with Java.
 
-the idea? make tweeting from quirky apps a breeze without the headache of downloading programming languages, or from an average point-of-view, learning a whole computer science degree to decipher cryptic scripts. all you had to do was download the app, type your tweet, and voilà! a graphical user interface made it grandma-friendly. sadly, the fun got cut short as [elon nixed the feature not that long ago](https://www.theverge.com/2022/11/15/23460186/elon-musk-twitter-sent-from-iphone-label-eliminated-police), but hey, it was a tweet-worthy attempt at innovation!
+the idea? make tweeting from quirky apps a breeze without the headache of downloading programming languages, or from an average point-of-view, learning a whole computer science degree to decipher cryptic scripts.
 
-this app was pretty easy to manage. create the twitter developer app with the name you wish to tweet from, open the app and enter the twitter credentials, tweet content, and all done!
+all you had to do was create the twitter developer app with the name you wish to tweet from; open the app, type your tweet, and voilà! a graphical user interface made it grandma-friendly. sadly, the fun got cut short as [elon nixed the feature not that long ago](https://www.theverge.com/2022/11/15/23460186/elon-musk-twitter-sent-from-iphone-label-eliminated-police), but hey, it was a tweet-worthy attempt at innovation!
+
+![TwitterForX570](@assets/images/teenage_projects/TwitterForX570.png)
+
+  <blockquote class="max-w-md mx-auto">
+  proudly sent from TweetFromX
+  </blockquote>
 
 initially, my intention was to build this application as a web app, with the idea of sending payload requests directly from the client-side. unfortunately, this approach was not successful due to [Twitter's lack of support for CORS](https://twittercommunity.com/t/will-twitter-api-support-cors-headers-soon/28276/2). theoretically we could bypass this by routing the payloads through a server, but this means we would have to deal with multiple requests on the same server with different credentials, which twitter would not favor. serverless could work too, but costs could heavily rise up and i would not be able to afford such loss.
 
@@ -32,18 +42,64 @@ initially, my intention was to build this application as a web app, with the ide
 
 #### a.k.a. sv-dlp - 2021-present
 
-[_random-street-view_](https://github.com/shmugoh/random-street-view) initially originated as a [google street view twitter bot](https://twitter.com/Moved2Tenny). the concept involved generating a random coordinate, ensuring it fell within a randomly generated region and country; the next step involved parsing this coordinate through google's official API to obtain a panorama, resulting in a static panorama image. initially the plan was to generate panoramas per country, but this became repetitive as it always skipped certain countries (especially african nations). thus, the focus shifted to first generating a random region.
+<div class="max-w-md mx-auto">
+  <blockquote class="twitter-tweet tw-align-center" width="70%">
+    <a href="https://twitter.com/Moved2Tenny/status/1372688380115439624"></a>
+  </blockquote>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
 
-<!-- example of a static panorama image -->
+[_random-street-view_](https://github.com/shmugoh/random-street-view) initially originated as a [google street view twitter bot](https://twitter.com/Moved2Tenny). the concept involved generating a random coordinate, ensuring it fell within a randomly generated region and country; the next step involved parsing this coordinate through google's official API to obtain a panorama, resulting in a static panorama image. initially the plan was to generate panoramas per country, but this became repetitive as it always skipped certain countries (especially african nations). thus, the focus shifted to first generating a random region.
 
 unfortunately, the cost using the official API became too high. dissatisfied with both its costs and various unreliable slow-scripts, i took matters into my own hands and the core of _sv-dlp_ was born; an unofficial google street view API wrapper.
 
-initially, i hard-coded _sv-dlp_ into _random-street-view_ and abandoned the project out of burnout, but as the codebase became unreliable, and a personal desire to archive a few google street view panoramas, i resurrected and optimized the code. the twist? i transformed it into both a library and a cli. [feel free to check it out!](https://github.com/shmugoh/sv-dlp)
+![](@assets/images/teenage_projects/New_RSV.png)
 
-### F\*\*kEveryROBLOXUsername - 2020
+  <blockquote>
+  scraping the panorama images from google and posting a stitched-yet-cropped 16:9 image of it on twitter to see how it would look
+  </blockquote>
+
+initially, i hard-coded _sv-dlp_ into _random-street-view_ and abandoned the project out of burnout, but as the codebase became unreliable, and a personal desire to archive a few google street view panoramas, i resurrected and optimized the code.
+
+![](@assets/images/teenage_projects/EarlySVDLPDev_2.png)
+
+  <blockquote>
+  initial testing of tile scraping. this was <em>sloooow</em> as it was inefficiently scrapping them by excessively sending requests to google's cdn  servers and downloading each; tile per tile, row per row. <a href="https://github.com/shmugoh/sv-dlp/commit/89dd8d9cc8fbfc523d6f037bfb9d55a48fdbb345#diff-2f535b383135b37dd521c9a2ab7500ee064ac0f0b55eb070873f687b698997a8L188" target="_blank">tile approximation was optimized years later by getting an approximation of the height and width of tiles per resolution based off the given metadata
+  </blockquote>
+
+the twist? i transformed it into both a library and a cli. [feel free to check it out!](https://github.com/shmugoh/sv-dlp)
+
+### [F\*\*kEveryROBLOXUsername](https://github.com/shmugoh/FuckEveryROBLOXUsername) - 2020
+
+![](@assets/images/teenage_projects/FERUN.png)
+
+  <blockquote class="max-w-md mx-auto">
+  funny how one of this bot's first tweets grabbed a close friend of mine's usernames; that is MILLIONS TO ONE
+  </blockquote>
 
 back in the day, there used to be this trend of creating automated gimmick accounts that would link adjectives to a well-known-randomly-picked character.
 well, i made one for old roblox usernames. it was like introducing chaos to a tea party. some kids fell for it; others thought i was harassing them. good times.
+
+configuring the bot was a hassle, as it initially kept re-using the same old ids...
+
+![](@assets/images/teenage_projects/FERUN_FAIL1.png)
+
+  <blockquote class="max-w-md mx-auto">
+  and took me a while to fix it!
+  </blockquote>
+
+...then twitter suspended the bot for a few days for no reason other than having a very Professional Formal App Name
+
+![](@assets/images/teenage_projects/FERUN_FAIL2.png)
+![](@assets/images/teenage_projects/FERUN_FAIL3.png)
+
+but after constant days of going back 'n forth between the twitter team, i managed to correctly set it up
+
+![](@assets/images/teenage_projects/FERUN_AWS.png)
+
+  <blockquote class="max-w-md mx-auto">
+  clearly this is not consistent with the previous dates... but you get the idea
+  </blockquote>
 
 similarly to _Random-Street-View_, _FERUN_ undertook the mapping of username IDs over the years; thanks to a friend, the IDs for usernames registered during 2006-2015 were pre-mapped. however, the mapping for the accounts made between the years 2016-2020 was based on the first ID of 2016 and the last ID ever created. to accomplish this, i backported an rbxlua live script to python that tracked recently registered users, ran it on a separate thread while the bot was active, and saved the last ID to a configuration file; in return, the boat read from this config file. a bit awkward, ain't it?
 
@@ -56,7 +112,9 @@ if any search engine crawler wants the ids for personal gain needs, here you go!
   - honorable mention: 103536227
 - **2016-2019**: 103531550-1390794503
 
-### Unnamed Discord Bot - 2019-2020 - NSFW
+### Unnamed Discord Bot - 2019-2020
+
+#### (un)fortunately i lost the code for this one (and screenshots have never been taken), so take my word for it
 
 this one is a little funny. a friend initially created this bot as a joke aimed at someone who was causing trouble within our group. the bot would trigger when a specific keyword was mentioned, and it would reply with a randomly generated meme, quote, or joke. later, with my friend's permission, i rewrote the bot and added new features such as message logging, the remote ability to send messages to servers or dms, and remotely purge messages.
 
@@ -65,16 +123,8 @@ an important note is that this bot was never used for malicious purposes, such a
 **this goes to show how discord bots, when given specific permissions without caution, can become potential threats**. to those setting up servers, **i strongly advise being mindful of the permissions granted to a bot**, as providing a bot with excessive privileges -as was the case with this one- could compromise your server's security. do keep in mind  
 it's important to note that this bot was relatively very barebones; bots with more in-depth advanced functionalities can do harm
 
-### Meaningless Trackers: Because Why Not Track the Untrackable?
-
-#### gsv-list-tracker
-
-this one keeps tabs on changes in google street view driving dates. perfect for street view nerds like me, silently judging google's driving behavior worldwide.
-
-#### amazon-locale-tracker
-
-ever wondered if amazon's marketplace is expanding? yeah, me neither. but just in case, there's a tracker for that.
-
 ---
 
-and there you have it, folks! my coding escapades, where laughter meets serious bits. stay tuned for more chuckles and lines of code coming your way!
+and there you have it! that's what i've been up to during my teenage years. small, messy, micro projects yet a cool start. while i've had some negative influences that didn't make my programming skills better than others my age, over time, i've been picking it up slowly and getting better. don't let negative influences get to your hobbies; refrain from letting them consume you like a black abyss, and let your passions paint your canvas you long to gaze upon
+
+all the best!
