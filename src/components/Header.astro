@@ -4,7 +4,7 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "about" | "search";
+  activeNav: string;
 }
 
 const { activeNav } = Astro.props;
@@ -54,20 +54,27 @@ const { activeNav } = Astro.props;
             <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
           </svg>
         </button>
+        <!-- TODO: Automatic Script that lists sites in .navbar -->
         <ul id="menu-items" class="display-none sm:flex">
+          <li>
+            <a
+              href="/projects"
+              class={activeNav === "projects" ? "active" : ""}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="/portfolio"
+              class={activeNav === "portfolio" ? "active" : ""}
+            >
+              Portfolio
+            </a>
+          </li>
           <li>
             <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
               Posts
-            </a>
-          </li>
-          <li>
-            <a href="/tags" class={activeNav === "tags" ? "active" : ""}>
-              Tags
-            </a>
-          </li>
-          <li>
-            <a href="/about" class={activeNav === "about" ? "active" : ""}>
-              About
             </a>
           </li>
           <li>
