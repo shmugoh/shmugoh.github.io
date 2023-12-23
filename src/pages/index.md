@@ -3,8 +3,8 @@ layout: ../layouts/IndexLayout.astro
 # title: "Welcome!"
 ---
 
-Mediocre self-taught programmer located in Colombia, specializing in
-Python, Golang, JavaScript/NodeJS, and React Native.
+Self-taught programmer located in Colombia, specializing in
+Python, Golang, and JavaScript; including frameworks like as React Native.
 
 I demonstrate a tenacious approach to problem-solving and thrive in
 dynamic environments. I'm devoted to stay up-to-date with the
@@ -16,7 +16,10 @@ consuming, I prefer to keep it on the down-low. I like to call it my
 'secret snack stash.' But beware, that once I get obsessed with
 something, there's no turning back.
 
-Check out my projects [here](/projects).
+The professional focus of this website is solely on [Projects](/projects)
+and [Portfolio](/portfolio). The blog has been tailored-down to align with
+the preferences of my online audience. However, you are welcome to explore
+the [Blog](/posts) as well if you're interested!
 
 ### Contact Info
 
