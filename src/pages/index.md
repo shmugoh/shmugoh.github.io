@@ -6,10 +6,9 @@ layout: ../layouts/IndexLayout.astro
 Self-taught programmer located in Colombia, specializing in
 Python, Golang, and JavaScript; including frameworks like as React Native.
 
-I demonstrate a tenacious approach to problem-solving and thrive in
-dynamic environments. I'm devoted to stay up-to-date with the
-most recent technological trends, always ready to
-tackle new challenges head-on.
+I demonstrate a persistent attitude to problem-solving and perform well in
+fast-paced settings. I'm dedicated on staying up-to-date with the
+most recent technological trends, always ready to tackle new challenges head-on.
 
 I put my creations on display for all to see, but when it comes to
 consuming, I prefer to keep it on the down-low. I like to call it my
