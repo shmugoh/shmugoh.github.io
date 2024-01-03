@@ -3,8 +3,8 @@ layout: ../layouts/IndexLayout.astro
 # title: "Welcome!"
 ---
 
-Self-taught programmer located in Colombia, specializing in
-Python, Golang, and JavaScript; including frameworks like as React Native.
+Self-taught Junior Programmer with Aspergers, based in Colombia,
+specializing in Python, Golang, JavaScript & TypeScript, and DevOps practices.
 
 I demonstrate a persistent attitude to problem-solving and perform well in
 fast-paced settings. I'm dedicated on staying up-to-date with the

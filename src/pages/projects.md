@@ -40,11 +40,7 @@ making dental care more engaging and accessible for the younger generation.
 
 Dishook was a project that was created as a simple command line discord webhook
 executor written in Golang. It was initially advertised for Discord webhooks, although
-it could theoretically work with other webhooks as long as they're /application/json types.
-
-I made this because I wanted to mess around with my friend on our
-personal server; webhooks were too complex to run, so as any programmer
-would do, I spent an entire week working on a 1-min solution
+it can technically work with other webhooks as long as they're /application/json types.
 
 The project was designed to be easy to use for people who have experience
 with command line interfaces and want to use Discord webhooks, but don't
@@ -53,6 +49,10 @@ and efficiently get their webhooks done without any hassle. Although the
 project is no longer actively developed, it still remains a
 useful tool for those who prefer a simple and straightforward solution
 for executing Discord webhooks.
+
+I made this because I wanted to mess around with my friend on our
+personal server; webhooks were too complex to run, so as any programmer
+would do, I spent an entire week working on a 1-min solution
 
 ## [pathman](https://github.com/shmugoh/pathman)
 

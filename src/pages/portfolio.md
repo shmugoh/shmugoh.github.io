@@ -9,7 +9,7 @@ title: "Portfolio"
 
 <juan@shmugo.co> • [GitHub](https://github.com/shmugoh)
 
-Dedicated to Software Development with a self-taught background, focusing in Python, Golang, TypeScript, and various of its frameworks for the respectful languages. Constantly enhancing programming skills by self-directed learning and utilization of online resources. I demonstrate a tenacious approach to problem-solving and thrive in dynamic environments. Skilled in troubleshooting computers and mobile devices, drawing on a solid basis of knowledge acquired from practical experience. Committed to staying up-to-date with the latest industry trends and technologies.
+Dedicated to Software Development with a self-taught background, focusing in Python, Golang, TypeScript, and various of its frameworks for the respectful languages. Additionally well-versed in DevOps practices. Constantly enhancing programming skills by self-directed learning and utilization of online resources. I demonstrate a tenacious approach to problem-solving and thrive in dynamic environments. Skilled in troubleshooting computers and mobile devices, drawing on a solid basis of knowledge acquired from practical experience. Committed to staying up-to-date with the latest industry trends and technologies.
 
 ## Skills
 
