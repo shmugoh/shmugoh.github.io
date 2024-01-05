@@ -22,13 +22,20 @@ export const LOGO_IMAGE = {
   height: 46,
 };
 
-// export const SOCIALS: SocialObjects = [
-//   {
-//     name: "Github",
-//     href: "https://github.com/satnaing/astro-paper",
-//     linkTitle: ` ${SITE.title} on Github`,
-//     active: true,
-//   },
+export const SOCIALS: SocialObjects = [
+  {
+    name: "Github",
+    href: "https://github.com/shmugoh",
+    linkTitle: ` ${SITE.title} on GitHub`,
+    active: true,
+  },
+  {
+    name: "Ko-Fi",
+    href: "https://ko-fi.com/shmugo",
+    linkTitle: ` ${SITE.title} on Ko-Fi`,
+    active: true,
+  },
+];
 //   {
 //     name: "Facebook",
 //     href: "https://github.com/satnaing/astro-paper",
