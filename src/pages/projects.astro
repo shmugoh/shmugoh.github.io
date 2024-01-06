@@ -2,27 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Hr from "@components/Hr.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import typeIcons from "@assets/typeIcons";
-import LinkButton from "@components/LinkButton.astro";
-
-/* Obtain Projects */
-import type { AppType } from "../types";
-const projects = await Astro.glob("../content/projects/*.md");
-
-interface ProjectParams {
-  title: string;
-  type: AppType;
-  link: string;
-  icon: string;
-  img: string;
-  featured: boolean; // adjust the type based on the actual type of 'featured'
-}
+import ProjectDetails from "@components/ProjectDetails.astro";
 ---
 
 <Layout>
-  <Header activeNav="" />
+  <Header activeNav="projects" />
   <main id="main-content">
     <Breadcrumbs />
 
@@ -30,72 +15,7 @@ interface ProjectParams {
       <h1>Projects</h1>
     </section>
 
-    <section id="projects">
-      <ul>
-        {
-          // this is messy as hell but i cant think of a better solution for now
-          async () => {
-            const project_props = projects
-              .map((project): { params: ProjectParams; props: any } => ({
-                params: {
-                  title: project.frontmatter.title,
-                  type: project.frontmatter.type,
-                  link: project.frontmatter.link,
-                  icon: project.frontmatter.icon,
-                  img: project.frontmatter.img,
-                  featured: project.frontmatter.featured,
-                },
-                props: {
-                  project,
-                },
-              }))
-              .sort((a, b) => (b.params.featured ? 1 : -1)); // sort by featured first
-
-            return project_props.map(({ params, props: { project } }) => {
-              const { Content } = project;
-              return (
-                <>
-                  <div class="flex flex-shrink-0 items-center justify-between">
-                    {params.icon ? ( // if icon is specified, use it
-                      <img
-                        width="32"
-                        height="32"
-                        src={params.icon}
-                        class="pointer-events-none"
-                      />
-                    ) : (
-                      // if not, use the type icon instead
-                      <Fragment set:html={typeIcons[params.type]} />
-                    )}
-
-                    <h2>
-                      <LinkButton
-                        className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-                        href={params.link}
-                      >
-                        {params.title}
-                      </LinkButton>
-                    </h2>
-
-                    <Fragment set:html={typeIcons[params.type]} />
-                  </div>
-
-                  {params.img ? ( // if image is specified, use it
-                    <img
-                      src={params.img}
-                      class="mb-8 mt-4 aspect-auto h-auto w-full rounded-lg shadow-md"
-                    />
-                  ) : // if image is NOT specified, return null
-                  null}
-                  <Content />
-                  <Hr />
-                </>
-              );
-            });
-          }
-        }
-      </ul>
-    </section>
+    <ProjectDetails />
   </main>
 </Layout>
 
