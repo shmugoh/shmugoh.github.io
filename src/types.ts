@@ -41,3 +41,9 @@ export type SocialMedia =
   | "Steam"
   | "Telegram"
   | "Mastodon";
+
+export type AppTypeIcons = {
+  [type in AppType]: string;
+};
+
+export type AppType = "cli" | "mobile" | "webapp";
