@@ -4,7 +4,7 @@ type: "mobile"
 link: "https://github.com/shmugoh/DrMuelitas"
 icon: "/projects/icons/drmuelitas_placeholder.png"
 img: "/projects/drmuelitas_wip_preview.png"
-featured: true
+featured: false
 ---
 
 DrMuelitas is a mobile app designed to make dental care fun and engaging for a younger audience.
