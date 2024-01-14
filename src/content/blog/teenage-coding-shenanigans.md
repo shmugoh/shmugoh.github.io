@@ -11,7 +11,7 @@ description: My previous quirky coding projects from teenage years, ranging from
 
 Wheeew! First post written in Astro... Honestly I can't believe I wasted a huge amount of time on developing a barebones static generator tool (create-new-site), when I could've used Astro instead! I mean it would look good on my portfolio nonetheless, but the exhaustion and procrastination was so high that I couldn't move on forward with it.
 
-Nonetheless... Hello! I am June (aka Juan/shmugo), and welcome to my Blog! For no reason other than pure documentation of my old shenanigans, here are my former _featured_ funny programming projects I made during my teenagehood. I didn't make that many, as I was on a forced mindset on making original unique programs/scripts, so my old shenanigans are at the same time featured ones too
+Nonetheless... Hello! I am shmugo, and welcome to my Blog! For no reason other than pure documentation of my old shenanigans, here are my former _featured_ funny programming projects I made during my teenagehood. I didn't make that many, as I was on a forced mindset on making original unique programs/scripts, so my old shenanigans are at the same time featured ones too
 
 ---
 
