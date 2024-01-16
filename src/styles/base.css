@@ -5,23 +5,23 @@
 @layer base {
   :root,
   html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 0, 108, 172;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
+    --color-fill: #eceff4;
+    --color-text-base: #2e3440;
+    --color-accent: #5e81ac;
+    --color-card: #d8dee9;
+    --color-card-muted: #d8dee9;
+    --color-border: #d8dee9;
   }
   html[data-theme="dark"] {
-    --color-fill: 33, 39, 55;
-    --color-text-base: 234, 237, 243;
-    --color-accent: 60, 132, 154;
-    --color-card: 60, 132, 154;
-    --color-card-muted: 60, 132, 154;
-    --color-border: 60, 132, 154;
+    --color-fill: #2e3440;
+    --color-text-base: #eceff4;
+    --color-accent: #88c0d0;
+    --color-card: #3b4252;
+    --color-card-muted: #3b4252;
+    --color-border: #616e88;
   }
   html[data-theme="dark"] .prose blockquote {
-    color: #eaedf3;
+    color: #ffffff;
   }
   html {
     scroll-behavior: smooth;
