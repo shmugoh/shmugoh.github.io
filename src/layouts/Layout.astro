@@ -1,5 +1,6 @@
 ---
 import { LOCALE, SITE } from "@config";
+import faviconImg from "../../public/favicon.png";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
 
@@ -32,7 +33,7 @@ const socialImageURL = new URL(
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={faviconImg.src} type="image/png" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
