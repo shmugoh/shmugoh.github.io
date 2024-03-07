@@ -1,0 +1,27 @@
+---
+import { SITE } from "@config";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import Layout from "./Layout.astro";
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`Portfolio | shmugo`}>
+  <Header activeNav={frontmatter.title.toLocaleLowerCase()} />
+  <Breadcrumbs />
+  <main id="main-content">
+    <section class="prose max-w-3xl text-sm">
+      <slot />
+    </section>
+  </main>
+  <Footer />
+</Layout>
