@@ -1,20 +1,22 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '@/layouts/Layout.astro'
+import {NavBar} from '@/components/NavBar'
 ---
 
 <Layout title="Home">
-	<div class="flex container justify-between items-center min-h-screen bg-[red]">
-		<div class="flex flex-wrap items-center bg-[blue] gap-2.5">
-			<img src="/icon.png" class="w-[436px] h-[436px]" />
-			<p>Hi, I'm shmugo!</p>
+	<div class="flex container justify-between items-center min-h-screen bg-background">
+		<div class="flex flex-wrap items-center gap-2.5 w-full justify-center">
+			<img src="/icon.png" class="w-[436px] h-[436px] object-contain" />
+			<p class="text-3xl font-mono">Hi, I'm shmugo!</p>
 		</div>
 		
 		<div class="flex flex-col">
+			<NavBar client:load />
+			<!-- <Button>Test</Button>
 			<button>Home</button>
 			<button>Projects</button>
 			<button>Gallery</button>
-			<button>About</button>
+			<button>About</button> -->
 		</div>
 	</div>
 </Layout>
