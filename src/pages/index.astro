@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Home">
+	<div class="flex container justify-between items-center min-h-screen bg-[red]">
+		<div class="flex flex-wrap items-center bg-[blue] gap-2.5">
+			<img src="/icon.png" class="w-[436px] h-[436px]" />
+			<p>Hi, I'm shmugo!</p>
+		</div>
+		
+		<div class="flex flex-col">
+			<button>Home</button>
+			<button>Projects</button>
+			<button>Gallery</button>
+			<button>About</button>
+		</div>
+	</div>
+</Layout>
