@@ -15,11 +15,6 @@ consuming, I prefer to keep it on the down-low. I like to call it my
 'secret snack stash.' But beware, that once I get obsessed with
 something, there's no turning back.
 
-The professional focus of this website is solely on [Projects](/projects)
-and [Portfolio](/portfolio). The blog has been tailored-down to align with
-the preferences of my online audience. However, you are welcome to explore
-my [Blog](/posts) as well if you're interested!
-
 ## Contact Info
 
 If you need to get in touch with me for business inquiries, find my
