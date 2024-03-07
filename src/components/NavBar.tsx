@@ -27,7 +27,7 @@ export const NavBar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/">
+            <a href="/projects">
               <NavigationMenuLink className={navigationMenuStyle}>
                 Projects
               </NavigationMenuLink>
@@ -35,7 +35,7 @@ export const NavBar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/">
+            <a href="/gallery">
               <NavigationMenuLink className={navigationMenuStyle}>
                 Gallery
               </NavigationMenuLink>
@@ -43,7 +43,7 @@ export const NavBar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/">
+            <a href="/about">
               <NavigationMenuLink className={navigationMenuStyle}>
                 About
               </NavigationMenuLink>
