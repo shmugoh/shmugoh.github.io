@@ -35,14 +35,6 @@ export const NavBar = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/gallery">
-              <NavigationMenuLink className={navigationMenuStyle}>
-                Gallery
-              </NavigationMenuLink>
-            </a>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
             <a href="/about">
               <NavigationMenuLink className={navigationMenuStyle}>
                 About

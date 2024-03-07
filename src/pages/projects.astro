@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProjectSet from '../components/ProjectSet.astro'
+---
+
+<Layout title="Projects">
+    <section id="hero">
+      <h1>Projects</h1>
+    </section>
+
+    <ProjectSet />
+  </main>
+</Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  #hero {
+    /* @apply; */
+  }
+  #hero h1 {
+    @apply text-2xl font-semibold sm:text-3xl;
+  }
+
+  /* ===== Projects Sections ===== */
+  #projects {
+    @apply pb-6;
+  }
+  #projects h2 {
+    /* @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl; */
+    @apply mb-2 mt-4 text-2xl font-bold tracking-wide;
+  }
+  #projects :global(p) {
+    @apply mb-4 leading-relaxed;
+  }
+  #projects :global(hr) {
+    /* @apply m-8; */
+  }
+</style>
