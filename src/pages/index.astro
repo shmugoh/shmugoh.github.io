@@ -1,10 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+import { Content as HomeContent } from "../content/home.mdx";
+import { Image } from "astro:assets";
+
+import IconImage from "../../public/icon.png";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<p>hi</p>
-	</main>
+  <main>
+    <div class="flex h-full flex-row items-center justify-center">
+      <img src={IconImage.src} width="400" alt={"my cool icon"} />
+      <div>
+        <HomeContent />
+      </div>
+    </div>
+  </main>
 </Layout>
