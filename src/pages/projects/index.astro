@@ -1,0 +1,22 @@
+---
+import Card from "../../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const ProjectMarkdowns = await Astro.glob("../../content/projects/*.md");
+---
+
+<Layout title="Projects">
+  <main>
+    <h1>Projects | Portfolio</h1>
+
+    {
+      ProjectMarkdowns.map(project => (
+        <Card
+          title={project.frontmatter.title}
+          body={project.frontmatter.description}
+          href={project.frontmatter.href}
+        />
+      ))
+    }
+  </main>
+</Layout>
