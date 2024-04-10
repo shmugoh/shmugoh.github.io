@@ -1,8 +1,10 @@
 ---
+import { getCollection } from "astro:content";
+
 import Card from "../../components/Card.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const ProjectMarkdowns = await Astro.glob("../../content/projects/*.md");
+const ProjectMarkdowns = await getCollection("projects");
 ---
 
 <Layout title="Projects">
@@ -12,9 +14,9 @@ const ProjectMarkdowns = await Astro.glob("../../content/projects/*.md");
     {
       ProjectMarkdowns.map(project => (
         <Card
-          title={project.frontmatter.title}
-          body={project.frontmatter.description}
-          href={project.frontmatter.href}
+          title={project.data.title}
+          body={project.data.description}
+          href={`/projects/${project.slug}`}
         />
       ))
     }
