@@ -11,14 +11,16 @@ const ProjectMarkdowns = await getCollection("projects");
   <main>
     <h1>Projects | Portfolio</h1>
 
-    {
-      ProjectMarkdowns.map(project => (
-        <Card
-          title={project.data.title}
-          body={project.data.description}
-          href={`/projects/${project.slug}`}
-        />
-      ))
-    }
+    <div class="flex flex-wrap items-center justify-center gap-4 p-4">
+      {
+        ProjectMarkdowns.map(project => (
+          <Card
+            title={project.data.title}
+            body={project.data.description}
+            href={`/projects/${project.slug}`}
+          />
+        ))
+      }
+    </div>
   </main>
 </Layout>

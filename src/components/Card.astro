@@ -1,61 +1,52 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  href: string;
 }
 
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<a class="ProjectCard gap-5 rounded-lg border p-5 shadow-lg" href={href}>
+  <div class="ProjectTitle flex h-fit w-full justify-between">
+    <h3 class="space-x-2.5">
+      {title}
+    </h3>
+
+    <div class="IconContainer">
+      <div class="PlaceholderIcon bg-[red]"></div>
+      <div class="PlaceholderIcon bg-[blue]"></div>
+    </div>
+  </div>
+
+  <div class="ProjectFooter flex h-full flex-col">
+    <div
+      class="ProjectImage h-full w-full rounded-t-lg border border-b-2 bg-[red]"
+    >
+    </div>
+    <span
+      class="ProjectDescription w-full rounded-b-lg border-b border-l border-r bg-[white] p-[8px]"
+    >
+      {body}
+    </span>
+  </div>
+</a>
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .ProjectCard {
+    height: 225px;
+    width: 350px;
+    background: #eceff4;
+    display: flex;
+    flex-direction: column;
+  }
+  .IconContainer {
+    display: flex;
+    gap: 10px;
+  }
+  .PlaceholderIcon {
+    height: 32px;
+    width: 32px;
+  }
 </style>
