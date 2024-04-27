@@ -14,7 +14,7 @@ const ProjectMarkdowns = await getCollection("projects");
 ---
 
 <Layout title="Home">
-  <main class="justfiy-between lg:flex">
+  <main class="items-center justify-between gap-[200px] lg:flex">
     <div class="InfoContainer">
       <div class="InfoIcon">
         <img src={IconImage.src} width="400" alt={"my cool icon"} />
@@ -33,13 +33,7 @@ const ProjectMarkdowns = await getCollection("projects");
       </div>
     </div>
 
-    <!-- <div class="flex w-full justify-between"> -->
-    <!-- <div class="flex flex-col"> -->
-    <!-- <img src={IconImage.src} width="400" alt={"my cool icon"} /> -->
-    <!-- <Content /> -->
-    <!-- </div> -->
-
-    <div class="flex flex-col">
+    <div class="flex w-full flex-col">
       {
         ProjectMarkdowns.map(project => (
           <Card
@@ -55,7 +49,7 @@ const ProjectMarkdowns = await getCollection("projects");
 
 <style>
   .InfoContainer {
-    @apply flex h-full flex-row gap-[40px];
+    @apply flex h-full w-full flex-row gap-[40px];
   }
 
   .InfoIcon {
@@ -72,7 +66,7 @@ const ProjectMarkdowns = await getCollection("projects");
     font-size: 36px;
   }
   .InfoText > p {
-    @apply font-normal;
+    @apply w-[355px] font-normal;
     font-size: 16px;
   }
 
