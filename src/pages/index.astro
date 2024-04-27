@@ -18,6 +18,13 @@ const ProjectMarkdowns = await getCollection("projects");
     <div class="InfoContainer">
       <div class="InfoIcon">
         <img src={IconImage.src} width="400" alt={"my cool icon"} />
+        <div class="SocialMediaButtons">
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+        </div>
       </div>
 
       <div class="InfoText">
@@ -57,5 +64,13 @@ const ProjectMarkdowns = await getCollection("projects");
     display: flex;
     flex-direction: column;
     align-self: center;
+  }
+
+  .SocialMediaButtons {
+    @apply flex flex-row justify-center gap-[24px];
+  }
+
+  .SocialMediaIcon {
+    @apply h-[32px] w-[32px] border bg-[white];
   }
 </style>

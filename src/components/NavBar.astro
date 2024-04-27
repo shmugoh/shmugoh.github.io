@@ -1,31 +1,26 @@
----
-import Button from "./Button.astro";
----
+<ul class="navbar">
+  <!-- <li></li> -->
+  <li><a class="PageTitleText" href="/">shmugo</a></li>
 
-<div
-  class="flex h-full w-[200px] flex-col items-center justify-center space-y-8"
->
-  <div class="top">
-    <div class="flex w-full items-center justify-center p-2">
-      <h2 class="text-3xl font-medium underline">shmugo</h2>
-    </div>
+  <li><a href="/">Home</a></li>
+  <!-- <li><a href="/">Posts</a></li> -->
+</ul>
 
-    <div class="flex flex-col space-y-5">
-      <Button name="Home" href="/" />
-      <Button name="Projects" href="/projects" />
-      <Button name="Contact" href="/contact" />
-    </div>
-  </div>
+<style>
+  ul.navbar {
+    @apply flex flex-row items-center gap-[32px] self-stretch px-[100px] py-[48px] text-white;
+  }
 
-  <div class="footer flex w-full justify-center gap-4">
-    <span
-      class="flex max-h-[64px] min-h-[64px] min-w-[64px] max-w-[64px] items-center justify-center bg-[black] text-white"
-      >Ko-Fi</span
-    >
+  /* Text */
+  .PageTitleText {
+    font-size: 72px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5;
+  }
 
-    <span
-      class="flex max-h-[64px] min-h-[64px] min-w-[64px] max-w-[64px] items-center justify-center bg-[black] text-white"
-      >Theme</span
-    >
-  </div>
-</div>
+  a {
+    font-size: 20px;
+    font-weight: 400;
+  }
+</style>
