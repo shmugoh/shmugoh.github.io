@@ -14,7 +14,7 @@ const ProjectMarkdowns = await getCollection("projects");
 ---
 
 <Layout title="Home">
-  <main class="items-center justify-between gap-[200px] lg:flex">
+  <main class="items-center justify-between gap-[200px] space-y-8 lg:flex">
     <div class="InfoContainer">
       <div class="InfoIcon">
         <img src={IconImage.src} width="400" alt={"my cool icon"} />
@@ -49,17 +49,19 @@ const ProjectMarkdowns = await getCollection("projects");
 
 <style>
   .InfoContainer {
-    @apply flex h-full w-full flex-row gap-[40px];
+    @apply flex h-full w-full flex-col items-center gap-[40px] lg:flex-row;
   }
 
   .InfoIcon {
     @apply flex flex-col;
   }
   .InfoText {
+    @apply text-center lg:text-left;
+
     display: flex;
     flex-direction: column;
     align-self: center;
-    text-align: left;
+    /* text-align: left; */
   }
   .InfoText > h2 {
     @apply font-bold;
