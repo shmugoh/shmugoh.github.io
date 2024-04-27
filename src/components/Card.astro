@@ -8,45 +8,40 @@ interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<a class="ProjectCard gap-5 rounded-lg border p-5 shadow-lg" href={href}>
-  <div class="ProjectTitle flex h-fit w-full justify-between">
-    <h3 class="space-x-2.5">
-      {title}
-    </h3>
-
-    <div class="IconContainer">
-      <div class="PlaceholderIcon bg-[red]"></div>
-      <div class="PlaceholderIcon bg-[blue]"></div>
-    </div>
+<a class="ProjectCard" href={href}>
+  <div class="ProjectTitle">
+    <div class="ProjectIcon"></div>
+    <h3 class="ProjectTitleContent">{title}</h3>
   </div>
-
-  <div class="ProjectFooter flex h-full flex-col">
-    <div
-      class="ProjectImage h-full w-full rounded-t-lg border border-b-2 bg-[red]"
-    >
-    </div>
-    <span
-      class="ProjectDescription w-full rounded-b-lg border-b border-l border-r bg-[white] p-[8px]"
-    >
-      {body}
-    </span>
+  <div class="ProjectBody">
+    <h4 class="ProjectBodyContent">{body}</h4>
   </div>
 </a>
 
 <style>
   .ProjectCard {
-    height: 225px;
-    width: 350px;
-    background: #eceff4;
-    display: flex;
-    flex-direction: column;
+    @apply flex h-fit w-full flex-col border-b-2 p-[20px];
   }
-  .IconContainer {
-    display: flex;
-    gap: 10px;
+
+  .ProjectTitle {
+    @apply flex flex-row gap-[10px];
   }
-  .PlaceholderIcon {
+  .ProjectIcon {
     height: 32px;
     width: 32px;
+    background-color: #d9d9d9;
+  }
+  .ProjectTitleContent {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .ProjectBody {
+    @apply flex flex-wrap py-[8px];
+  }
+  .ProjectBodyContent {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
   }
 </style>

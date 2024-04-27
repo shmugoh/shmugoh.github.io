@@ -2,21 +2,60 @@
 import Layout from "../layouts/Layout.astro";
 import IconImage from "../../public/icon.png";
 import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
 
+// Home Markdown
 const HomeMarkdowns = await getCollection("home");
-
 const HomeMarkdown = HomeMarkdowns[0];
 const { Content } = await HomeMarkdown.render();
+
+// Projects Markdown
+const ProjectMarkdowns = await getCollection("projects");
 ---
 
 <Layout title="Home">
-  <main>
-    <h1 class="hidden">Home</h1>
-    <div class="flex flex-col items-center justify-center lg:flex-row">
-      <img src={IconImage.src} width="400" alt={"my cool icon"} />
-      <div>
+  <main class="flex justify-between">
+    <div class="InfoContainer">
+      <div class="InfoIcon">
+        <img src={IconImage.src} width="400" alt={"my cool icon"} />
+      </div>
+
+      <div class="InfoText">
         <Content />
       </div>
     </div>
+
+    <!-- <div class="flex w-full justify-between"> -->
+    <!-- <div class="flex flex-col"> -->
+    <!-- <img src={IconImage.src} width="400" alt={"my cool icon"} /> -->
+    <!-- <Content /> -->
+    <!-- </div> -->
+
+    <div class="flex flex-col">
+      {
+        ProjectMarkdowns.map(project => (
+          <Card
+            title={project.data.title}
+            body={project.data.description}
+            href={project.data.href}
+          />
+        ))
+      }
+    </div>
   </main>
 </Layout>
+
+<style>
+  .InfoContainer {
+    @apply flex h-full flex-row gap-[40px];
+  }
+
+  .InfoIcon {
+    @apply flex flex-col;
+  }
+  .InfoText {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+</style>
