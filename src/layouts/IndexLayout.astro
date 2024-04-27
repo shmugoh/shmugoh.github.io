@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconImage from "../../public/icon.png";
+import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
+const { currentLocale } = Astro;
+
+// Home Markdown
+const HomeMarkdowns = await getCollection("home", ({ data }) => {
+  return data.language === currentLocale;
+});
+const HomeMarkdown = HomeMarkdowns[0];
+
+// Projects Markdown
+const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
+  return data.language === currentLocale;
+});
+---
+
+<Layout title="Home">
+  <main class="items-center justify-between gap-[200px] space-y-8 lg:flex">
+    <div class="InfoContainer">
+      <div class="InfoIcon">
+        <img src={IconImage.src} width="400" alt={"my cool icon"} />
+        <div class="SocialMediaButtons">
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+          <div class="SocialMediaIcon"></div>
+        </div>
+      </div>
+
+      <div class="InfoText">
+        <h2>{HomeMarkdown.data.title}</h2>
+        <p>{HomeMarkdown.body}</p>
+      </div>
+    </div>
+
+    <div class="flex w-full flex-col">
+      {
+        ProjectMarkdowns.map(project => (
+          <Card
+            title={project.data.title}
+            body={project.data.description}
+            href={project.data.href}
+          />
+        ))
+      }
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .InfoContainer {
+    @apply flex h-full w-full flex-col items-center gap-[40px] lg:flex-row;
+  }
+
+  .InfoIcon {
+    @apply flex flex-col;
+  }
+  .InfoText {
+    @apply text-center lg:text-left;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /* text-align: left; */
+  }
+  .InfoText > h2 {
+    @apply font-bold;
+    font-size: 36px;
+  }
+  .InfoText > p {
+    @apply w-[355px] font-normal;
+    font-size: 16px;
+  }
+
+  .SocialMediaButtons {
+    @apply flex flex-row justify-center gap-[24px];
+  }
+
+  .SocialMediaIcon {
+    @apply h-[32px] w-[32px] border bg-[white];
+  }
+</style>

@@ -5,7 +5,10 @@ import { z, defineCollection } from "astro:content";
 // home collection
 const homeCollection = defineCollection({
   type: "content",
-  schema: z.object({ title: z.string() }),
+  schema: z.object({
+    title: z.string(),
+    language: z.literal("en").or(z.literal("es")),
+  }),
 });
 
 // project collection
@@ -15,6 +18,7 @@ const projectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     href: z.string(),
+    language: z.literal("en").or(z.literal("es")),
   }),
 });
 
