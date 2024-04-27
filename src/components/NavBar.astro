@@ -1,3 +1,7 @@
+---
+import "@fontsource-variable/inter";
+---
+
 <ul class="navbar">
   <!-- <li></li> -->
   <li><a class="PageTitleText" href="/">shmugo</a></li>
@@ -13,6 +17,8 @@
 
   /* Text */
   .PageTitleText {
+    @apply font-sans;
+
     font-size: 72px;
     font-weight: 900;
     text-align: center;
@@ -20,6 +26,8 @@
   }
 
   a {
+    @apply font-mono;
+
     font-size: 20px;
     font-weight: 400;
   }

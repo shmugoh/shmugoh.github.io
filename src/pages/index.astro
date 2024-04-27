@@ -14,7 +14,7 @@ const ProjectMarkdowns = await getCollection("projects");
 ---
 
 <Layout title="Home">
-  <main class="flex justify-between">
+  <main class="justfiy-between lg:flex">
     <div class="InfoContainer">
       <div class="InfoIcon">
         <img src={IconImage.src} width="400" alt={"my cool icon"} />
@@ -28,7 +28,8 @@ const ProjectMarkdowns = await getCollection("projects");
       </div>
 
       <div class="InfoText">
-        <Content />
+        <h2>{HomeMarkdown.data.title}</h2>
+        <p>{HomeMarkdown.body}</p>
       </div>
     </div>
 
@@ -64,6 +65,15 @@ const ProjectMarkdowns = await getCollection("projects");
     display: flex;
     flex-direction: column;
     align-self: center;
+    text-align: left;
+  }
+  .InfoText > h2 {
+    @apply font-bold;
+    font-size: 36px;
+  }
+  .InfoText > p {
+    @apply font-normal;
+    font-size: 16px;
   }
 
   .SocialMediaButtons {

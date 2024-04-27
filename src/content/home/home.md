@@ -1,7 +1,5 @@
 ---
-title: Home
+title: Hi, I'm shmugo!
 ---
-
-## Hi, I'm shmugo!
 
 I am a Colombian Software Developer, Spanish Translator, and I’m also cool.

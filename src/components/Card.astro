@@ -20,7 +20,7 @@ const { href, title, body } = Astro.props;
 
 <style>
   .ProjectCard {
-    @apply flex h-fit w-full flex-col border-b-2 p-[20px];
+    @apply flex h-fit w-full flex-col space-y-[20px] border-b-2 p-[20px];
   }
 
   .ProjectTitle {
@@ -37,11 +37,12 @@ const { href, title, body } = Astro.props;
   }
 
   .ProjectBody {
-    @apply flex flex-wrap py-[8px];
+    @apply flex flex-wrap;
   }
   .ProjectBodyContent {
+    @apply font-medium leading-[152%];
+
     font-size: 12px;
-    font-weight: 500;
     text-align: center;
   }
 </style>
