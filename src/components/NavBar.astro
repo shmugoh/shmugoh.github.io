@@ -1,10 +1,15 @@
 ---
 import "@fontsource-variable/inter";
+import LanguageDropDown from "./LanguageDropDown.astro";
 ---
 
-<ul class="navbar">
+<ul class="navbar w-full">
   <!-- <li></li> -->
-  <li><a class="PageTitleText" href="/">shmugo</a></li>
+  <div class="justify-start">
+    <li><a class="PageTitleText" href="/">shmugo</a></li>
+  </div>
+
+  <LanguageDropDown />
 
   <!-- <li><a href="/">Home</a></li> -->
   <!-- <li><a href="/">Posts</a></li> -->
@@ -12,7 +17,7 @@ import "@fontsource-variable/inter";
 
 <style>
   ul.navbar {
-    @apply flex flex-row items-center justify-center gap-[32px] py-[48px] text-white lg:justify-normal lg:px-[100px];
+    @apply flex flex-row items-center justify-between gap-[32px] py-[48px] text-white lg:px-[100px];
     background-color: black;
   }
 

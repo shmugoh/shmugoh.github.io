@@ -1,0 +1,85 @@
+---
+const currentLocale = Astro.currentLocale;
+---
+
+<div class="language-picker">
+  <select id="language-select">
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+  </select>
+</div>
+
+<style>
+  .language-picker {
+    position: relative;
+    display: inline-block;
+  }
+
+  .language-picker select {
+    @apply bg-[black];
+
+    padding: 8px;
+    font-size: 16px;
+  }
+
+  .language-display {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+</style>
+
+<!-- detect dropdown change -->
+<script>
+  document
+    .getElementById("language-select")!
+    .addEventListener("change", function (e) {
+      const selectedLanguage = this.value;
+
+      switch (selectedLanguage) {
+        case "en":
+          var href = build_url("en");
+          window.location.pathname = href;
+          break;
+        case "es":
+          var href = build_url("es");
+          window.location.href = href;
+          break;
+      }
+    });
+
+  function build_url(language: string) {
+    // split path
+    const path = window.location.pathname;
+    var path_splice = path.split("/").slice(1); // by slicing the first index, we're ignoring the blank space
+
+    // replace language code
+    if (path_splice[0].length == 2) {
+      // language code
+
+      // remove language code if selected is english
+      if (language == "en") {
+        path_splice = path_splice.splice(1, 1);
+      } else {
+        path_splice[0] == language;
+      }
+
+      // add language code
+    } else {
+      if (language == "en") {
+        // do nothing
+      } else {
+        path_splice.unshift(language);
+      }
+    }
+
+    // return built path
+    const iterated_path = "/" + path_splice.join("/");
+    return iterated_path;
+  }
+</script>
+
+<!-- change default language -->
+<script define:vars={{ currentLocale }}>
+  const languageSelect = document.getElementById("language-select");
+  languageSelect.value = currentLocale;
+</script>
