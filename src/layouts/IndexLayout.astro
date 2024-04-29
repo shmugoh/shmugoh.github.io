@@ -5,6 +5,8 @@ import { getCollection } from "astro:content";
 import Card from "../components/Card.astro";
 const { currentLocale } = Astro;
 
+import Socials from "../components/Socials.astro";
+
 // Home Markdown
 const HomeMarkdowns = await getCollection("home", ({ data }) => {
   return data.language === currentLocale;
@@ -22,13 +24,7 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
     <div class="InfoContainer">
       <div class="InfoIcon">
         <img src={IconImage.src} width="400" alt={"my cool icon"} />
-        <div class="SocialMediaButtons">
-          <div class="SocialMediaIcon"></div>
-          <div class="SocialMediaIcon"></div>
-          <div class="SocialMediaIcon"></div>
-          <div class="SocialMediaIcon"></div>
-          <div class="SocialMediaIcon"></div>
-        </div>
+        <Socials />
       </div>
 
       <div class="InfoText">
@@ -74,13 +70,5 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
   .InfoText > p {
     @apply w-[355px] font-normal;
     font-size: 16px;
-  }
-
-  .SocialMediaButtons {
-    @apply flex flex-row justify-center gap-[24px];
-  }
-
-  .SocialMediaIcon {
-    @apply h-[32px] w-[32px] border bg-[white];
   }
 </style>

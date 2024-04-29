@@ -1,0 +1,40 @@
+---
+import { SOCIALS } from "../config";
+import LinkButton from "./LinkButton.astro";
+
+export interface Props {
+  centered?: boolean;
+}
+
+import { Icon } from "astro-icon/components";
+
+const ICON_SIZE = 24;
+---
+
+<div class="SocialMediaButtons">
+  {
+    SOCIALS.filter(social => social.active).map(social => (
+      <a href={social.href} class="SocialMediaButton">
+        <Icon
+          name={social.icon}
+          size={ICON_SIZE}
+          class="SocialMediaIcon"
+          color={"#ffffff50"}
+        />
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .SocialMediaButtons {
+    @apply flex flex-row justify-center gap-[24px] lg:gap-[12px];
+  }
+  .SocialMediaButton {
+    @apply p-2;
+
+    border: solid;
+    border-radius: 0.8rem;
+    border: 2px solid #ffffff35;
+  }
+</style>
