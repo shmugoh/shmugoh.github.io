@@ -5,4 +5,4 @@ language: es
 icon: "/images/projects/whentoplayvideo.png"
 ---
 
-sdfsdfsdf
+Sincroniza cualquier canción o video de YouTube a un tiempo específico para celebraciones especiales

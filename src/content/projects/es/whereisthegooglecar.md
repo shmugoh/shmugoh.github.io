@@ -5,4 +5,4 @@ language: es
 icon: "/images/projects/whereisthegooglecar.png"
 ---
 
-Google Car Sighting Website
+Sitio de observaciones públicas para vehículos de (Google) Street View. También puede servir como un dataset

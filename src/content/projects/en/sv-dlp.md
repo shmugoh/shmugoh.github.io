@@ -5,4 +5,4 @@ language: en
 icon: "/images/projects/sv_dlp.png"
 ---
 
-Flexible Python API for Street View
+Flexible Street View API Wrapper that works both as a Python library and a CLI. Download panoramic images, fetch metadata, and create short URLs

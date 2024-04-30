@@ -8,10 +8,12 @@ const { currentLocale } = Astro;
 import Socials from "../components/Socials.astro";
 
 // Home Markdown
+import Prose from "../components/Prose.astro";
 const HomeMarkdowns = await getCollection("home", ({ data }) => {
   return data.language === currentLocale;
 });
 const HomeMarkdown = HomeMarkdowns[0];
+const { Content } = await HomeMarkdown.render();
 
 // Projects Markdown
 const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
@@ -28,7 +30,10 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
 
     <div class="InfoText">
       <h2>{HomeMarkdown.data.title}</h2>
-      <p>{HomeMarkdown.body}</p>
+      <Prose>
+        <Content />
+      </Prose>
+      <!-- <p>{HomeMarkdown.body}</p> -->
     </div>
   </div>
 
@@ -60,14 +65,12 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
     display: flex;
     flex-direction: column;
     align-self: center;
+
+    width: 35vh;
     /* text-align: left; */
   }
   .InfoText > h2 {
     @apply font-bold;
     font-size: 33px;
-  }
-  .InfoText > p {
-    @apply w-[355px] font-normal;
-    font-size: 18px;
   }
 </style>

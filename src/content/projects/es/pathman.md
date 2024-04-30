@@ -5,4 +5,4 @@ language: es
 icon: "/images/projects/pathman.png"
 ---
 
-Key-Value Path Management CLI Tool
+Herramienta Terminal de Gestión de Variables de Entorno para Windows

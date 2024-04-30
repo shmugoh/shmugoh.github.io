@@ -3,4 +3,6 @@ title: Hola, soy Juan!
 language: es
 ---
 
-Soy un Colombiano que es Desarrollador de Software, Traductor de Español a Ingles, y soy cool.
+Soy un Desarrollador de Software, traductor entre el Inglés y el Español, y estoy obsesionado con muchas cosas.
+
+Puedo desarrollar para ti cualquier tipo de software, sitio web, o traducción entre el Español y el Inglés; ¡cualquiera que requieras! Mandame un correo si te interesa
