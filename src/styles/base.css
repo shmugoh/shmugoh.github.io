@@ -35,12 +35,6 @@
   }
 }
 
-/* Border */
-.BorderBottom {
-  border-bottom-color: var(--buttonBorder);
-  border-bottom-width: 2px;
-}
-
 /* Buttons */
 .SocialMediaButton {
   @apply p-2;
@@ -56,15 +50,12 @@
 
 /* Containers */
 .BodyContainer {
-  @apply flex flex-col items-center;
+  @apply my-8 flex flex-col items-center lg:my-0 lg:h-[90vh];
   background-color: var(--background);
 }
 .ContentContainer {
-  @apply container w-full justify-between lg:flex;
-}
-
-.ProjectCard {
-  @apply flex h-fit w-full flex-col space-y-[20px] p-[20px];
+  @apply w-full justify-between space-y-12 px-[2vh] lg:flex lg:px-[10vh];
+  margin: auto; /* center content container in the middle */
 }
 
 /* Text */
@@ -87,41 +78,38 @@ p {
 
 /* Navbar */
 ul.navbar {
-  @apply flex flex-row items-center justify-between gap-[32px] py-[48px] text-white lg:px-[100px];
+  @apply flex flex-col items-center justify-between gap-[32px] px-[10vh] py-[48px] lg:flex-row lg:px-[100px];
   background-color: var(--background);
+  color: var(--textBody);
 }
 .PageTitleText {
   @apply font-sans;
-  font-size: 72px;
+  font-size: 64px;
   font-weight: 900;
   line-height: 1.5;
   text-align: center;
 }
 
 /* Project Cards */
+.ProjectCard {
+  @apply flex h-full w-full flex-col flex-wrap space-y-[20px] p-[20px];
+}
+.ProjectCard:hover {
+  background-color: var(--buttonHover);
+}
 .ProjectBody {
-  @apply flex flex-wrap;
+  @apply flex flex-wrap font-medium leading-[152%];
+  font-size: 15px;
+  text-align: left;
 }
-
-.ProjectBodyContent {
-  @apply font-medium leading-[152%];
-
-  font-size: 14.25px;
-  text-align: center;
-}
-
 .ProjectIcon {
   background-color: var(--buttonIcon);
   height: 32px;
   width: 32px;
 }
-
 .ProjectTitle {
   @apply flex flex-row gap-[10px];
-}
-
-.ProjectTitleContent {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -130,7 +118,8 @@ ul.navbar {
   @apply flex flex-row justify-center gap-[24px] lg:gap-[12px];
 }
 
-/* Hover Effects */
-.BorderBottom:hover {
-  background-color: var(--buttonHover);
+/* Border Bottom */
+.BorderBottom {
+  border-bottom-color: var(--buttonBorder);
+  border-bottom-width: 2px;
 }
