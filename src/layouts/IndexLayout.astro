@@ -20,31 +20,29 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
 ---
 
 <Layout title="Home">
-  <main class="items-center justify-between gap-[200px] space-y-8 lg:flex">
-    <div class="InfoContainer">
-      <div class="InfoIcon">
-        <img src={IconImage.src} width="400" alt={"my cool icon"} />
-        <Socials />
-      </div>
-
-      <div class="InfoText">
-        <h2>{HomeMarkdown.data.title}</h2>
-        <p>{HomeMarkdown.body}</p>
-      </div>
+  <div class="InfoContainer">
+    <div class="InfoIcon">
+      <img src={IconImage.src} width="400" alt={"my cool icon"} />
+      <Socials />
     </div>
 
-    <div class="flex w-full flex-col">
-      {
-        ProjectMarkdowns.map(project => (
-          <Card
-            title={project.data.title}
-            body={project.data.description}
-            href={project.data.href}
-          />
-        ))
-      }
+    <div class="InfoText">
+      <h2>{HomeMarkdown.data.title}</h2>
+      <p>{HomeMarkdown.body}</p>
     </div>
-  </main>
+  </div>
+
+  <div class="flex w-full flex-col">
+    {
+      ProjectMarkdowns.map(project => (
+        <Card
+          title={project.data.title}
+          body={project.data.description}
+          href={project.data.href}
+        />
+      ))
+    }
+  </div>
 </Layout>
 
 <style>

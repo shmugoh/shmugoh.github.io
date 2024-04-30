@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import NavBar from "../components/NavBar.astro";
+import "../styles/base.css";
 
 interface Props {
   title: string;
@@ -8,7 +9,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-import "@fontsource/ibm-plex-mono";
+import "@fontsource-variable/noto-sans-mono";
 ---
 
 <!doctype html>
@@ -22,29 +23,11 @@ import "@fontsource/ibm-plex-mono";
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-[black]" transition:animate="none">
+  <body class="BodyContainer" transition:animate="none">
     <!-- Content -->
     <NavBar />
     <div class="ContentContainer">
       <slot />
     </div>
-
-    <!-- Styles -->
-    <style is:global>
-      /* Temporal */
-      h1,
-      h2,
-      p,
-      h3,
-      h4 {
-        @apply font-mono;
-        color: white;
-      }
-
-      /* Content Container */
-      .ContentContainer {
-        @apply w-full items-center gap-[10px] px-8 py-12 lg:px-24;
-      }
-    </style>
   </body>
 </html>

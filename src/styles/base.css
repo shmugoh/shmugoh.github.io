@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --transparent: #00000000;
+  --background: #fcfcfc;
+  --textBody: #757575;
+  --buttonBorder: #0000001a;
+  --buttonBackground: #ffffff60;
+  --buttonHover: #0000000a;
+  --accent: #000000;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fcfcfc;
+    --textBody: #757575;
+    --buttonBorder: #0000001a;
+    --buttonBackground: #ffffff60;
+    --buttonHover: #0000000a;
+    --accent: #000000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --textBody: #e4e4e4;
+    --paragraphBody: #dadadad7;
+    --buttonBorder: #ffffff1f;
+    --buttonHover: #ffffff12;
+    --buttonIcon: #ffffff50;
+    --accent: #e1e1e1;
+  }
+}
+
+/* Border */
+.BorderBottom {
+  border-bottom-color: var(--buttonBorder);
+  border-bottom-width: 2px;
+}
+
+/* Buttons */
+.SocialMediaButton {
+  @apply p-2;
+  background-color: transparent;
+  color: var(--buttonIcon);
+  border: 2px solid var(--buttonBorder);
+  border-radius: 0.8rem;
+}
+
+.SocialMediaButton:hover {
+  background-color: var(--buttonHover);
+}
+
+/* Containers */
+.BodyContainer {
+  @apply flex flex-col items-center;
+  background-color: var(--background);
+}
+.ContentContainer {
+  @apply container w-full justify-between lg:flex;
+}
+
+.ProjectCard {
+  @apply flex h-fit w-full flex-col space-y-[20px] p-[20px];
+}
+
+/* Text */
+h1,
+h2,
+h3,
+h4 {
+  @apply font-mono;
+  color: var(--textBody);
+}
+a {
+  @apply font-mono;
+  font-size: 20px;
+  font-weight: 400;
+}
+p {
+  @apply font-mono;
+  color: var(--paragraphBody);
+}
+
+/* Navbar */
+ul.navbar {
+  @apply flex flex-row items-center justify-between gap-[32px] py-[48px] text-white lg:px-[100px];
+  background-color: var(--background);
+}
+.PageTitleText {
+  @apply font-sans;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Project Cards */
+.ProjectBody {
+  @apply flex flex-wrap;
+}
+
+.ProjectBodyContent {
+  @apply font-medium leading-[152%];
+
+  font-size: 14.25px;
+  text-align: center;
+}
+
+.ProjectIcon {
+  background-color: var(--buttonIcon);
+  height: 32px;
+  width: 32px;
+}
+
+.ProjectTitle {
+  @apply flex flex-row gap-[10px];
+}
+
+.ProjectTitleContent {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Social Media Buttons */
+.SocialMediaButtons {
+  @apply flex flex-row justify-center gap-[24px] lg:gap-[12px];
+}
+
+/* Hover Effects */
+.BorderBottom:hover {
+  background-color: var(--buttonHover);
+}
