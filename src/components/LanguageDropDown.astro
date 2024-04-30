@@ -32,7 +32,7 @@ const currentLocale = Astro.currentLocale;
 <script>
   document
     .getElementById("language-select")!
-    .addEventListener("change", function (e) {
+    .addEventListener("change", function (this: HTMLSelectElement) {
       const selectedLanguage = this.value;
 
       switch (selectedLanguage) {
