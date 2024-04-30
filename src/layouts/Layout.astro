@@ -1,26 +1,64 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+
 import NavBar from "../components/NavBar.astro";
+
+import faviconImg from "../../public/favicon.png";
+import "@fontsource-variable/noto-sans-mono";
 import "../styles/base.css";
 
-interface Props {
-  title: string;
+import { LOCALE, SITE } from "../config";
+export interface Props {
+  title?: string;
+  author?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalURL?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title = SITE.title,
+  author = SITE.author,
+  description = SITE.desc,
+  ogImage = SITE.ogImage,
+  canonicalURL = new URL(Astro.url.pathname, Astro.url).href,
+} = Astro.props;
 
-import "@fontsource-variable/noto-sans-mono";
+const socialImageURL = new URL(
+  ogImage ?? SITE.ogImage ?? "og.png",
+  Astro.url.origin
+).href;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={faviconImg.src} type="image/png" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- General Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+
     <ViewTransitions />
   </head>
   <body class="BodyContainer" transition:animate="none">

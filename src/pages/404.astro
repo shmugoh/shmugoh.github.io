@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import image from "../assets/404.png";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Not Found - shmugo">
+  <main id="main-content">
+    <div class="not-found-wrapper">
+      <h1>404</h1>
+      <!-- <div class="img-container"> -->
+      <Image
+        class={"rounded-lg stroke-inherit	"}
+        src={image}
+        alt="test"
+        width={350}
+        height={350}
+      />
+      <a class="ClickableText" href="/">Return</a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  #main-content {
+    @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
+  }
+  .not-found-wrapper {
+    @apply flex flex-col items-center justify-center space-y-8 p-12;
+  }
+  .not-found-wrapper h1 {
+    @apply text-7xl font-bold;
+  }
+  .not-found-wrapper p {
+    /* @apply ; */
+  }
+  /* .not-found-wrapper .img-container {
+    @apply rounded-full;
+  } */
+</style>

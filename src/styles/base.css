@@ -123,3 +123,9 @@ ul.navbar {
   border-bottom-color: var(--buttonBorder);
   border-bottom-width: 2px;
 }
+
+/* Clickable Text */
+.ClickableText {
+  @apply underline decoration-dashed underline-offset-8;
+  color: var(--textBody);
+}
