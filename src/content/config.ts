@@ -16,9 +16,9 @@ const projectsCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    description: z.string(),
     href: z.string(),
     language: z.literal("en").or(z.literal("es")),
+    icon: z.string(),
   }),
 });
 

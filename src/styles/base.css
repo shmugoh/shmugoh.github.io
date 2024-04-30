@@ -103,7 +103,7 @@ ul.navbar {
   text-align: left;
 }
 .ProjectIcon {
-  background-color: var(--buttonIcon);
+  /* background-color: var(--buttonIcon); */
   height: 32px;
   width: 32px;
 }

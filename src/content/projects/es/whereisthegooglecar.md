@@ -1,8 +1,8 @@
 ---
 title: "WhereIsTheGoogleCar"
-description: "Google Car Sighting Website"
 href: "https://whereisthegooglecar.com"
 language: es
+icon: "/images/projects/whereisthegooglecar.png"
 ---
 
-Hello, world!
+Google Car Sighting Website

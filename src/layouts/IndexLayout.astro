@@ -37,8 +37,9 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
       ProjectMarkdowns.map(project => (
         <Card
           title={project.data.title}
-          body={project.data.description}
+          body={project.body}
           href={project.data.href}
+          icon={project.data.icon}
         />
       ))
     }

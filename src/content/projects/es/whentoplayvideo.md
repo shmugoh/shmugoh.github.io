@@ -1,8 +1,8 @@
 ---
 title: "WhenToPlayVideo"
-description: "sdfsdfsdf"
 href: "https://whentoplayvideo.vercel.app"
 language: es
+icon: "/images/projects/whentoplayvideo.png"
 ---
 
-Hello, world!
+sdfsdfsdf
