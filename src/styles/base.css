@@ -50,7 +50,7 @@
 
 /* Containers */
 .BodyContainer {
-  @apply my-8 flex flex-col items-center lg:my-0 lg:h-[90vh];
+  @apply mb-8 flex flex-col items-center lg:my-0 lg:h-[90vh];
   background-color: var(--background);
 }
 .ContentContainer {
@@ -78,7 +78,7 @@ p {
 
 /* Navbar */
 ul.navbar {
-  @apply flex flex-col items-center justify-between gap-[32px] px-[10vh] py-[48px] lg:flex-row lg:px-[100px];
+  @apply flex flex-col items-center px-[10vh] py-[48px] lg:flex-row lg:justify-between lg:gap-[32px] lg:px-[100px];
   background-color: var(--background);
   color: var(--textBody);
 }

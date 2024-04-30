@@ -22,55 +22,58 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
 ---
 
 <Layout title="shmugo">
-  <div class="InfoContainer">
-    <div class="InfoIcon">
-      <img src={IconImage.src} width="400" alt={"my cool icon"} />
-      <Socials />
+  <div
+    class="flex w-full flex-col space-y-8 lg:flex-row lg:gap-16 lg:space-y-0"
+  >
+    <div class="InfoContainer">
+      <div class="InfoIcon">
+        <img src={IconImage.src} width="400" alt={"my cool icon"} />
+        <Socials />
+      </div>
+
+      <div class="InfoText">
+        <h2>{HomeMarkdown.data.title}</h2>
+        <Prose>
+          <Content />
+        </Prose>
+        <!-- <p>{HomeMarkdown.body}</p> -->
+      </div>
     </div>
 
-    <div class="InfoText">
-      <h2>{HomeMarkdown.data.title}</h2>
-      <Prose>
-        <Content />
-      </Prose>
-      <!-- <p>{HomeMarkdown.body}</p> -->
+    <div class="flex w-full flex-col">
+      {
+        ProjectMarkdowns.map(project => (
+          <Card
+            title={project.data.title}
+            body={project.body}
+            href={project.data.href}
+            icon={project.data.icon}
+          />
+        ))
+      }
     </div>
   </div>
 
-  <div class="flex w-full flex-col">
-    {
-      ProjectMarkdowns.map(project => (
-        <Card
-          title={project.data.title}
-          body={project.body}
-          href={project.data.href}
-          icon={project.data.icon}
-        />
-      ))
+  <style>
+    .InfoContainer {
+      @apply flex h-full w-full flex-col items-center gap-[40px] lg:flex-row;
     }
-  </div>
+
+    .InfoIcon {
+      @apply flex flex-col;
+    }
+    .InfoText {
+      @apply text-center lg:text-left;
+      @apply lg:w-[40vh];
+
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      /* text-align: left; */
+    }
+    .InfoText > h2 {
+      @apply font-bold;
+      font-size: 33px;
+    }
+  </style>
 </Layout>
-
-<style>
-  .InfoContainer {
-    @apply flex h-full w-full flex-col items-center gap-[40px] lg:flex-row;
-  }
-
-  .InfoIcon {
-    @apply flex flex-col;
-  }
-  .InfoText {
-    @apply text-center lg:text-left;
-
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-
-    width: 35vh;
-    /* text-align: left; */
-  }
-  .InfoText > h2 {
-    @apply font-bold;
-    font-size: 33px;
-  }
-</style>
