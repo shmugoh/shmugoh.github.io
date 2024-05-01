@@ -21,8 +21,6 @@ jobs:
 
       - name: Install, build, and upload your site output
         uses: withastro/action@v1
-        with:
-          node-version: 18
 
   deploy:
     needs: build
