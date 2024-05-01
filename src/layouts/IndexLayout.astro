@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconImage from "../../public/icon.png";
+import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
+const { currentLocale } = Astro;
+
+import Socials from "../components/Socials.astro";
+
+// Home Markdown
+import Prose from "../components/Prose.astro";
+const HomeMarkdowns = await getCollection("home", ({ data }) => {
+  return data.language === currentLocale;
+});
+const HomeMarkdown = HomeMarkdowns[0];
+const { Content } = await HomeMarkdown.render();
+
+// Projects Markdown
+const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
+  return data.language === currentLocale;
+});
+---
+
+<Layout title="shmugo">
+  <div
+    class="flex w-full flex-col space-y-8 lg:flex-row lg:gap-16 lg:space-y-0"
+  >
+    <div class="InfoContainer">
+      <div class="InfoIcon">
+        <img src={IconImage.src} width="400" alt={"my cool icon"} />
+        <Socials />
+      </div>
+
+      <div class="InfoText">
+        <h2>{HomeMarkdown.data.title}</h2>
+        <Prose>
+          <Content />
+        </Prose>
+        <!-- <p>{HomeMarkdown.body}</p> -->
+      </div>
+    </div>
+
+    <div class="flex w-full flex-col">
+      {
+        ProjectMarkdowns.map(project => (
+          <Card
+            title={project.data.title}
+            body={project.body}
+            href={project.data.href}
+            icon={project.data.icon}
+          />
+        ))
+      }
+    </div>
+  </div>
+
+  <style>
+    .InfoContainer {
+      @apply flex h-full w-full flex-col items-center gap-[40px] lg:flex-row;
+    }
+
+    .InfoIcon {
+      @apply flex flex-col;
+    }
+    .InfoText {
+      @apply text-center lg:text-left;
+      @apply lg:w-[40vh];
+
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      /* text-align: left; */
+    }
+    .InfoText > h2 {
+      @apply font-bold;
+      font-size: 33px;
+    }
+  </style>
+</Layout>

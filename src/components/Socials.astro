@@ -1,0 +1,21 @@
+---
+import { SOCIALS } from "../config";
+
+export interface Props {
+  centered?: boolean;
+}
+
+import { Icon } from "astro-icon/components";
+
+const ICON_SIZE = 24;
+---
+
+<div class="SocialMediaButtons">
+  {
+    SOCIALS.filter(social => social.active).map(social => (
+      <a href={social.href} class="SocialMediaButton">
+        <Icon name={social.icon} size={ICON_SIZE} class="SocialMediaIcon" />
+      </a>
+    ))
+  }
+</div>

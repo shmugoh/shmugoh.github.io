@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  icon: string;
+}
+
+const { href, title, body, icon } = Astro.props;
+
+import { Image } from "astro:assets";
+---
+
+<a class="ProjectCard BorderBottom" href={href} target="_blank">
+  <div class="ProjectTitle">
+    <div class="ProjectIcon">
+      <Image
+        src={icon}
+        alt={`Icon for Project ${title}`}
+        width={32}
+        height={32}
+      />
+    </div>
+    <h3>{title}</h3>
+  </div>
+  <div class="ProjectBody">
+    <p>{body}</p>
+  </div>
+</a>
