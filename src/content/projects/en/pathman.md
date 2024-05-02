@@ -1,6 +1,6 @@
 ---
 title: "pathman - kv"
-href: "https://github.com/shmugoh/sv-dlp"
+href: "https://github.com/shmugoh/pathman"
 language: en
 icon: "/images/projects/pathman.png"
 ---
