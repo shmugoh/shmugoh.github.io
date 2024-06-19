@@ -40,7 +40,7 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
       </div>
     </div>
 
-    <div class="flex w-full flex-col">
+    <div class="flex w-fit flex-col">
       {
         ProjectMarkdowns.map(project => (
           <Card
@@ -63,13 +63,17 @@ const ProjectMarkdowns = await getCollection("projects", ({ data }) => {
       @apply flex flex-col;
     }
     .InfoText {
-      @apply text-center lg:text-left;
-      @apply lg:w-[40vh];
+      @apply w-[55vh] text-center lg:text-left;
 
       display: flex;
       flex-direction: column;
       align-self: center;
-      /* text-align: left; */
+      text-align: left;
+    }
+    @media screen and (min-width: 1700px) {
+      .InfoText {
+        @apply w-[40vh];
+      }
     }
     .InfoText > h2 {
       @apply font-bold;

@@ -96,25 +96,33 @@ ul.navbar {
 
 /* Project Cards */
 .ProjectCard {
-  @apply flex h-full w-full flex-col flex-wrap space-y-[20px] p-[20px];
+  @apply flex h-full flex-col flex-wrap space-y-[20px] p-[20px];
 }
 .ProjectCard:hover {
   background-color: var(--buttonHover);
 }
-.ProjectBody {
-  @apply flex flex-wrap font-medium leading-[152%];
-  font-size: 15px;
-  text-align: left;
-}
-.ProjectIcon {
-  /* background-color: var(--buttonIcon); */
-  height: 32px;
-  width: 32px;
-}
+
 .ProjectTitle {
   @apply flex flex-row gap-[10px];
   font-size: 20px;
   font-weight: bold;
+}
+.ProjectBody {
+  @apply flex flex-wrap font-medium leading-[152%];
+  font-size: 16px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1700px) {
+  .ProjectBody {
+    font-size: 12.5px;
+  }
+}
+
+.ProjectIcon {
+  /* background-color: var(--buttonIcon); */
+  height: 32px;
+  width: 32px;
 }
 
 /* Social Media Buttons */
